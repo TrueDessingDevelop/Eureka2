@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">User List</h2>
+      <button class="btn btn-sm btn-info" (click)="new()">New</button>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id in the System</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <th scope="row"><a routerLink="/dashboard/user/update/{{user._id}}">{{user._id}}</a></th>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td class="text-center">
+                <button class="btn btn-sm btn-primary" routerLink="/dashboard/user/update/{{user._id}}">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="delete(user._id, i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

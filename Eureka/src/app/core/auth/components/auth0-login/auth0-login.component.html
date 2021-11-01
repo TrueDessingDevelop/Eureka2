@@ -1,0 +1,35 @@
+<div class="row justify-content-center mt-5">
+  
+    <div class="col-md-4">
+      <div *ngIf="msg" class="row alert alert-warning" role="alert">
+        {{msg}}
+      </div>
+        <h2>Login</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Email <address></address></label>
+          <input class="form-control" type="text" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control" type="password" formControlName="password" required>
+        </div>
+        <div class="form-group">  
+            <a class="" routerLinkActive="active"  routerLink="#">Forgot Password?</a>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Continue</button>
+        </div>
+        <div class="form-group">  
+            <p>Dont have a account?</p>
+            <a class="" routerLinkActive="active"  routerLink="#">Sing up</a>
+            <p>------------------------OR-------------------------------</p>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="button" (click)="google()">Continue with Google</button>
+          </div>
+      </form>
+     
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Permissions List</h2>
+      <button class="btn btn-sm btn-info" (click)="new()">New</button>
+    </div>
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th *ngFor="let rol of roles" scope="col">{{rol.name}}</th>
+            <th class="text-center" scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let permission of permissions; let i = index">
+            <th scope="row">{{permission._id}}</th>
+            <td>{{permission.name}}</td>
+            <td>{{permission.description}}</td>
+            <th *ngFor="let rol of permission.rol; let i = index" scope="col">
+
+                <span class="{{rol[2]}}">{{rol[1]}}</span>
+            </th>
+            <td *ngIf="!permission.locked" class="text-center">
+              <button class="btn btn-sm btn-primary" routerLink="/dashboard/permission/update/{{permission._id}}">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="delete(permission._id, i)">Delete</button>
+              <button class="btn btn-sm btn-danger" (click)="lock(permission._id, i)">Lock</button>
+            </td>
+            <td *ngIf="permission.locked">
+              <button class="btn btn-sm btn-danger" (click)="unlock(permission._id, i)">Unlock</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

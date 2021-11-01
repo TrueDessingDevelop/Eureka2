@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <h2>New Rol</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input class="form-control" type="text" formControlName="description" required>
+        </div>
+  
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Add Rol</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

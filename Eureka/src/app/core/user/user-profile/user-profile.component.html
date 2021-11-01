@@ -1,0 +1,22 @@
+<div class="row">
+  
+  <div *ngIf="auth.user$ | async as user" class="col-md-4">
+      <div *ngIf="!isEdit">
+        <ul>
+          <li>{{ profile.username }}</li>
+          <li>{{ user.email }}</li>
+        </ul>
+      </div>
+      <div *ngIf="isEdit">
+        <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+          <div class="form-group">
+            <label>Username</label>
+            <input class="form-control" type="text" formControlName="username" required>
+          </div>
+        </form>
+      </div>
+      <button class="btn btn-success"type="button" value="Edit"(click)="edit()">{{editMsg}}</button>
+  </div>
+  
+
+</div>

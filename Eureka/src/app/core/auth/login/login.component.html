@@ -1,0 +1,25 @@
+<div class="row justify-content-center mt-5">
+  
+    <div class="col-md-4">
+      <div *ngIf="msg" class="row alert alert-warning" role="alert">
+        {{msg}}
+      </div>
+        <h2>Login</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" type="text" formControlName="username" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control" type="password" formControlName="password" required>
+        </div>
+        
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Login</button>
+        </div>
+      </form>
+     
+    </div>
+  </div>

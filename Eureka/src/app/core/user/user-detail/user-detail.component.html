@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <div *ngIf="msg" class="row alert alert-warning" role="alert">
+        {{msg}}
+      </div>
+        <h2>Edit User Profile</h2>
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" type="text" formControlName="username" required>
+        </div>
+  
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="email" formControlName="email" required>
+        </div>
+        
+        <label>Roles</label>
+        <div  *ngFor="let rol of Roles, let k = index" class="form-group row p-2 ">
+          <input type="checkbox" class="col-4 form-control form-check-input" id="{{rol.name}}" value="{{rol.name}}" (change)="onCheckboxChange($event)"  checked={{rol.checked}}>
+          <label class="col-4" for="{{rol.name}}">{{rol.name}}</label>
+        </div>
+        
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Update</button>
+        </div>
+
+      </form>
+    </div>
+  </div>

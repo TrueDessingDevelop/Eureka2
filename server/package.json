@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-express-sequelize-mysql",
+  "version": "1.0.0",
+  "description": "Node.js rest api with express , sequelize and Mysql",
+  "main": " server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "mysql",
+    "rest",
+    "api"
+  ],
+  "author": "orbe",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "jwks-rsa": "^2.0.5",
+    "mongoose": "^6.0.11",
+    "mysql2": "^2.3.0",
+    "request": "^2.88.2",
+    "sequelize": "^6.7.0"
+  }
+}
